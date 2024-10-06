@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries List</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Countries Explorer</div>
+            <div class="toggle" id="dark-mode-toggle">
+                <i class="fa-regular fa-moon"></i> 
+            </div>
+        </nav>
+
+        <div class="search-filter-container">
+            <input type="text" id="search" placeholder="Search by country..." oninput="filterCountries()">
+            <select id="continent-filter" onchange="filterCountries()">
+                <option value="">All Countries</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">Americas</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" id="countries-container"></div>
+
+
+    </main>
+
+
+    <main>
+        <!-- Countries list view -->
+        <div class="container" id="countries-container"></div>
+    
+        <!-- Country detail view (Initially hidden) -->
+        <div id="country-detail" class="hidden">
+            <button id="back-button">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <div id="detail-content"></div>
+        </div>
+    </main>
+    
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+/* Common styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+.logo {
+   font-weight: 500;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f9f1;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .navbar {
+    background-color: #333;
+}
+
+.search-filter-container {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#search {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    height: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    background-color: white;
+}
+
+body.dark-mode #search {
+    background-color: #333;
+    color: white;
+}
+
+#search::placeholder {
+    color: #888;
+}
+
+body.dark-mode #search::placeholder {
+    color: #ccc;
+}
+
+#continent-filter {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+}
+
+body.dark-mode #continent-filter {
+    background-color: #333;
+    color: white;
+}
+
+#continent-filter option {
+    color: black;
+}
+
+body.dark-mode #continent-filter option {
+    background-color: #444;
+    color: white;
+}
+
+/* Grid layout for countries */
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .card {
+    background-color: #333;
+    color: white;
+}
+
+.card img {
+    width: 180px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .card img {
+        width: 120px;
+        height: 80px;
+    }
+
+    .card h2 {
+        font-size: 1.2em;
+    }
+
+    .card p {
+        font-size: 0.9em;
+    }
+
+    #search {
+        width: 300px;
+    }
+
+    #continent-filter {
+        width: 180px;
+    }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .search-filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #search {
+        width: 330px;
+        margin-bottom: 10px;
+    }
+
+    #continent-filter {
+        width: 160px;
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+
+    .card img {
+        width: 100px;
+        height: 70px;
+    }
+}
+
+/* Media query for very small screens (300px) */
+@media (max-width: 300px) {
+    .search-filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #search {
+        width: 250px;
+        margin-bottom: 10px;
+    }
+
+    #continent-filter {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+
+    .card img {
+        width: 80px;
+        height: 50px;
+    }
+}
+.hidden {
+    display: none;
+}
+
+#country-detail {
+    margin-top: 50px;
+}
+
+#back-button {
+    background-color: #99d69b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#back-button i {
+    margin-right: 10px;
+}
+/* Styling for the neighboring country buttons */
+.neighbor-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.neighbor-buttons button {
+    background-color: #99d69b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.neighbor-buttons button:hover {
+    background-color: #88c089;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .neighbor-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
